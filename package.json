@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"files": [
 		"index.js",
+		"track.js",
 		"example.js"
 	],
 	"keywords": [
@@ -22,6 +23,7 @@
 		"node": ">=8"
 	},
 	"dependencies": {
+		"pirates": "^4.0.1"
 	},
 	"scripts": {
 		"test": "env NODE_ENV=dev node test.js",
