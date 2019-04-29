@@ -1,0 +1,30 @@
+{
+	"name": "generate-node-policy-file",
+	"description": "Generate a Node.js policy file for your code.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"example.js"
+	],
+	"keywords": [
+		"node.js",
+		"node",
+		"policy",
+		"json"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/generate-node-policy-file",
+	"repository": "derhuerst/generate-node-policy-file",
+	"bugs": "https://github.com/derhuerst/generate-node-policy-file/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=8"
+	},
+	"dependencies": {
+	},
+	"scripts": {
+		"test": "env NODE_ENV=dev node test.js",
+		"prepublishOnly": "npm test"
+	}
+}
