@@ -3,3 +3,6 @@ node_js:
   - 'stable'
   - 'lts/*'
   - '8'
+script:
+  - npm test
+  - if [[ $TRAVIS_NODE_VERSION == "12*" ]] || [[ $TRAVIS_NODE_VERSION == stable ]]; then ./test/run.sh; fi
