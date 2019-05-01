@@ -18,9 +18,31 @@ npm install generate-node-policy-file
 
 ## Usage
 
+Generate a list of required files by your app:
+
 ```shell
-todo
+env REQUIRED_FILES=required-files.json node -r generate-node-policy-file/track my-app.js
 ```
+
+Generate a [Node.js policy file](https://nodejs.org/api/policy.html) from the list:
+
+```shell
+generate-node-policy-file <required-files.json >policy.json
+```
+
+Make it read-only for the user the app will be running with:
+
+```shell
+sudo chown root:admin policy.json
+sudo chmod 755 policy.json
+```
+
+## Options
+
+option | description | default
+-------|-------------|--------
+`--base-dir`, `-d` | Directory the file paths are relative to. | `$CWD`
+`--on-error` | [Error behavior](https://nodejs.org/api/policy.html#policy_error_behavior). | `exit`
 
 
 ## Contributing
