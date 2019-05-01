@@ -2,6 +2,10 @@
 
 **Generate a [Node.js policy file](https://nodejs.org/api/policy.html) for your code.**
 
+*Note:* As of Node.js `12`, the [policy feature](https://nodejs.org/api/policy.html) is marked as **experimental**:
+
+> This feature is still under active development and subject to non-backward compatible changes or removal in any future version. Use of the feature is not recommended in production environments. Experimental features are not subject to the Node.js Semantic Versioning model.
+
 [![npm version](https://img.shields.io/npm/v/generate-node-policy-file.svg)](https://www.npmjs.com/package/generate-node-policy-file)
 [![build status](https://api.travis-ci.org/derhuerst/generate-node-policy-file.svg?branch=master)](https://travis-ci.org/derhuerst/generate-node-policy-file)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/generate-node-policy-file.svg)
@@ -35,6 +39,12 @@ Make it read-only for the user the app will be running with:
 ```shell
 sudo chown root:admin policy.json
 sudo chmod 755 policy.json
+```
+
+Let Node.js use it:
+
+```shell
+node --experimental-policy=policy.json my-app.js
 ```
 
 ## Options

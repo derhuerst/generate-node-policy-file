@@ -1,7 +1,7 @@
 {
 	"name": "generate-node-policy-file",
 	"description": "Generate a Node.js policy file for your code.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "index.js",
 	"bin": {
 		"generate-node-policy-file": "./generate.js"
@@ -9,8 +9,7 @@
 	"files": [
 		"index.js",
 		"generate.js",
-		"track.js",
-		"example.js"
+		"track.js"
 	],
 	"keywords": [
 		"node.js",
