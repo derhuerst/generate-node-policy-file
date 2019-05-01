@@ -39,15 +39,18 @@ const showError = (err) => {
 	process.exit(1)
 }
 
-const {readFileSync} = require('fs')
+const {realpathSync, readFileSync} = require('fs')
 const generatePolicy = require('.')
 
-const baseDir = argv['base-dir'] || argv.d || process.cwd()
-const errorBehavior = argv['on-error'] || 'exit'
+let baseDir = argv['base-dir'] || argv.d
+if (baseDir) baseDir = realpathSync(baseDir)
+else process.cwd()
 
 const src = argv._[0]
 if (!src) showError('The first argument must be the path to a file.')
 const files = JSON.parse(readFileSync(src, {encoding: 'utf-8'}))
+
+const errorBehavior = argv['on-error'] || 'exit'
 
 generatePolicy(baseDir, files, errorBehavior)
 .then((policy) => {
