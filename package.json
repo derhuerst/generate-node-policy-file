@@ -33,7 +33,9 @@
 		"ssri": "^6.0.1"
 	},
 	"scripts": {
-		"test": "env NODE_ENV=dev node test.js",
+		"test:track": "env REQUIRED_FILES=test/files.json node -r ./track.js test/one.js && node test/track.js",
+		"test:generate": "node test/generate.js",
+		"test": "npm run test:track && npm run test:generate",
 		"prepublishOnly": "npm test"
 	}
 }
