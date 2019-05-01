@@ -35,7 +35,8 @@
 	"scripts": {
 		"test:track": "env REQUIRED_FILES=test/files.json node -r ./track.js test/one.js && node test/track.js",
 		"test:generate": "node test/generate.js",
-		"test": "npm run test:track && npm run test:generate",
+		"test:cli": "./generate.js --base-dir test test/files.json >/dev/null",
+		"test": "npm run test:track && npm run test:generate && npm run test:cli",
 		"prepublishOnly": "npm test"
 	}
 }
