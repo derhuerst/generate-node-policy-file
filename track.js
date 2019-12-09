@@ -1,6 +1,7 @@
 'use strict'
 
 const {createWriteStream} = require('fs')
+const {sync: findPackageJSON} = require('pkg-up')
 const {addHook} = require('pirates')
 
 const showError = (err) => {
@@ -11,15 +12,18 @@ const showError = (err) => {
 const destPath = process.env.REQUIRED_FILES
 if (!destPath) showError('Missing env REQUIRED_FILES var.')
 
+const pathToPackageJSON = findPackageJSON()
+
 const dest = createWriteStream(destPath, {encoding: 'utf-8'})
 dest.on('error', showError)
 
-dest.write('[\n')
-let first = true
+// Node >= 12.13 seems to require `package.json` to be in the polify file.
+dest.write(`[
+${JSON.stringify(pathToPackageJSON)}
+`)
+
 addHook((src, filename) => {
-	if (first) first = false
-	else dest.write(',')
-	dest.write(JSON.stringify(filename) + '\n')
+	dest.write(',' + JSON.stringify(filename) + '\n')
 	return src
 }, {
 	exts: [

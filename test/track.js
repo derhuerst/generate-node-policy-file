@@ -5,6 +5,7 @@ const {readFileSync} = require('fs')
 const {deepStrictEqual} = require('assert')
 
 const expected = [
+	'../package.json',
 	'one.js',
 	'some-dir/two.js',
 	'some-dir/three.js'
