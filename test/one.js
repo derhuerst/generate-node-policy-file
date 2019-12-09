@@ -1,3 +1,3 @@
 'use strict'
 
-module.exports = require('./some-dir/two')
+console.log(require('./some-dir/two'))

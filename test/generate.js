@@ -13,9 +13,9 @@ const files = [
 ].map(file => join(__dirname, file))
 const errorBehavior = 'log'
 
-const ONE = 'sha512-91tZe1ccLCs4KE1l+rRwGgs6zToRDGu7gj7PI+n2O73pZzISFZH3WoTo1mc9z4XnGUhUejx6WzIhF9RLAYVgEw=='
+const ONE = 'sha512-aj0n4KXeeijx68HWhebYUwVSNmZTsAhXlmv1BBTB5GAnlVX2pg0aO23EpEYBGeLQsbqIP2JCU9ioxyIru+7Vzw=='
 const TWO = 'sha512-rwhrYWPpd3JwDExvPA8VFRVaGA2RPq3Cg1VfsQ+OaTDIXgrTBQ1B0gP8fBH02mbpRe1VGA0NlTJb5Dz4+iFznA=='
-const THREE = 'sha512-m5NR/SSdQLPxYLmASg1VgDrgK40hZiAqlBQQEm3UxAxhj4zRcWwcHIkdjs2dpyo4rQVvceuns+9RxDV7Xrpl+A=='
+const THREE = 'sha512-HXk+bqp9VdwuTUPxN9wYpIusnY/fo3yjD7Fn+gMoyEOsrG73nB2OgSFrJYl7ORTNUdo6GDsylXu7VLUmX3CFrw=='
 
 generatePolicy(baseDir, files, errorBehavior)
 .then((policy) => {

@@ -1,3 +1,3 @@
 'use strict'
 
-module.exports = 'hey there'
+module.exports = 'this works!'
