@@ -2,7 +2,7 @@
 
 **Generate a [Node.js policy file](https://nodejs.org/api/policy.html) for your code.**
 
-*Note:* As of Node.js `12`, the [policy feature](https://nodejs.org/api/policy.html) is marked as **experimental**:
+*Note:* In Node.js `12` and `13`, the [policy feature](https://nodejs.org/api/policy.html) is marked as **experimental**:
 
 > This feature is still under active development and subject to non-backward compatible changes or removal in any future version. Use of the feature is not recommended in production environments. Experimental features are not subject to the Node.js Semantic Versioning model.
 
