@@ -21,6 +21,12 @@ addHook((src, filename) => {
 	else dest.write(',')
 	dest.write(JSON.stringify(filename) + '\n')
 	return src
+}, {
+	exts: [
+		'.js',
+		'.mjs', // see also https://github.com/ariporad/pirates/issues/56
+		'.json'
+	]
 })
 
 process.on('exit', (code) => {
