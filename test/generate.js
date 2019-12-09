@@ -22,9 +22,9 @@ generatePolicy(baseDir, files, errorBehavior)
 	deepStrictEqual(policy, {
 		onerror: 'log',
 		resources: {
-			'./one.js': { integrity: ONE },
-			'./some-dir/two.js': { integrity: TWO },
-			'./some-dir/three.js': { integrity: THREE }
+			'./one.js': { integrity: ONE, dependencies: true },
+			'./some-dir/two.js': { integrity: TWO, dependencies: true },
+			'./some-dir/three.js': { integrity: THREE, dependencies: true }
 		}
 	})
 	console.info('ok 2 generates expected policy')

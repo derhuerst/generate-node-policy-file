@@ -22,7 +22,10 @@ const generatePolicy = (baseDir, files, errorBehavior) => {
 	const addIntegrity = (file) => (cb) => {
 		computeIntegrity(file)
 		.then((integrity) => {
-			res[relativePath(baseDir, file)] = {integrity}
+			res[relativePath(baseDir, file)] = {
+				integrity,
+				dependencies: true // todo: implement this, see #3
+			}
 			cb()
 		})
 		.catch(cb)
