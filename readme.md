@@ -2,6 +2,8 @@
 
 **Generate a [Node.js policy file](https://nodejs.org/api/policy.html) for your code.**
 
+> Policies are a security feature intended to allow guarantees about what code Node.js is able to load. The use of policies assumes safe practices for the policy files such as ensuring that policy files cannot be overwritten by the Node.js application by using file permissions.
+
 *Note:* In Node.js `12` and `13`, the [policy feature](https://nodejs.org/api/policy.html) is marked as **experimental**:
 
 > This feature is still under active development and subject to non-backward compatible changes or removal in any future version. Use of the feature is not recommended in production environments. Experimental features are not subject to the Node.js Semantic Versioning model.
@@ -9,8 +11,8 @@
 [![npm version](https://img.shields.io/npm/v/generate-node-policy-file.svg)](https://www.npmjs.com/package/generate-node-policy-file)
 [![build status](https://api.travis-ci.org/derhuerst/generate-node-policy-file.svg?branch=master)](https://travis-ci.org/derhuerst/generate-node-policy-file)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/generate-node-policy-file.svg)
-[![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
-[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
+[![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
+[![chat with me on Twitter](https://img.shields.io/badge/chat%20with%20me-on%20Twitter-1da1f2.svg)](https://twitter.com/derhuerst)
 
 
 ## Installation
