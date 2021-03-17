@@ -7,7 +7,8 @@ const pkg = require('./package.json')
 
 const argv = mri(process.argv.slice(2), {
 	boolean: [
-		'version', 'v'
+		'version', 'v',
+		'help', 'h',
 	]
 })
 
@@ -17,7 +18,7 @@ Generate a list of required files by your app:
 	env REQUIRED_FILES=required-files.json node -r generate-node-policy-file/track my-app.js
 
 Generate a Node.js policy file from the list:
-    generate-node-policy-file <required-files.json >policy.json
+    generate-node-policy-file required-files.json >policy.json
     sudo chown root:admin policy.json
     sudo chmod 755 policy.json
 
@@ -44,7 +45,7 @@ const generatePolicy = require('.')
 
 let baseDir = argv['base-dir'] || argv.d
 if (baseDir) baseDir = realpathSync(baseDir)
-else process.cwd()
+else baseDir = process.cwd()
 
 const src = argv._[0]
 if (!src) showError('The first argument must be the path to a file.')
