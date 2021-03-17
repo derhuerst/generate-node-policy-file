@@ -55,6 +55,7 @@ option | description | default
 -------|-------------|--------
 `--base-dir`, `-d` | Directory the file paths are relative to. | `$CWD`
 `--on-error` | [Error behavior](https://nodejs.org/api/policy.html#policy_error_behavior). | `exit`
+`--pretty`, `-p` | Pretty-print the generated JSON. | –
 
 
 ## Contributing

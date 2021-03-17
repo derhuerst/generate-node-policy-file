@@ -9,6 +9,7 @@ const argv = mri(process.argv.slice(2), {
 	boolean: [
 		'version', 'v',
 		'help', 'h',
+		'pretty', 'p',
 	]
 })
 
@@ -26,6 +27,7 @@ Options:
     --base-dir  -d  Directory the file paths are relative to. Default: .
     --on-error      Error behavior. Default: exit
                     https://nodejs.org/api/policy.html#policy_error_behavior
+	--pretty    -p  Pretty-print the generated JSON.
 \n`)
 	process.exit(0)
 }
@@ -53,8 +55,13 @@ const files = JSON.parse(readFileSync(src, {encoding: 'utf-8'}))
 
 const errorBehavior = argv['on-error'] || 'exit'
 
+const pretty = !!(argv.pretty || argv.p)
+
 generatePolicy(baseDir, files, errorBehavior)
 .then((policy) => {
-	process.stdout.write(JSON.stringify(policy))
+	const json = pretty
+		? JSON.stringify(policy, null, '\t')
+		: JSON.stringify(policy)
+	process.stdout.write(json)
 })
 .catch(showError)
